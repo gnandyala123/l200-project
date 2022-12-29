@@ -17,15 +17,14 @@ stages:
       displayName: npm install and build
       inputs:
         script: >
-          npm install
-
           npm i yarn
+          
+          yarn install
 
           cd packages/web
 
-          yarn install
+          yarn run start
 
-          npm run build
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: $(Build.SourcesDirectory)/packages/web
